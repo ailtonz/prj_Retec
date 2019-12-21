@@ -28,7 +28,7 @@ On Error GoTo Err_cmdVisualizar_Click
 
 Dim stDocName As String
 Dim stLinkCriteria As String
-Dim Campo As String
+Dim campo As String
 Dim Filtro As Boolean
 
 Dim RelatoriosCriterios As DAO.Recordset
@@ -94,7 +94,7 @@ If Not RelatoriosPeriodos.EOF Then
         
             If Not IsNull(RelatoriosPeriodos.Fields![Inicio]) Then
                 stLinkCriteria = stLinkCriteria & IIf(stLinkCriteria <> "", " and ", "") & _
-                                "[" & RelatoriosPeriodos.Fields![Campo] & "] Between #" & _
+                                "[" & RelatoriosPeriodos.Fields![campo] & "] Between #" & _
                                 Format(RelatoriosPeriodos.Fields![Inicio], "mm/dd/yyyy") & _
                                 "# AND #" & _
                                 Format(RelatoriosPeriodos.Fields![Terminio], "mm/dd/yyyy") & "#"
@@ -105,7 +105,7 @@ If Not RelatoriosPeriodos.EOF Then
         
             If Not IsNull(RelatoriosPeriodos.Fields![Inicio]) Then
                 stLinkCriteria = stLinkCriteria & IIf(stLinkCriteria <> "", " and ", "") & _
-                                "[" & RelatoriosPeriodos.Fields![Campo] & "] Between " & _
+                                "[" & RelatoriosPeriodos.Fields![campo] & "] Between " & _
                                 RelatoriosPeriodos.Fields![Inicio] & _
                                 " AND " & _
                                 RelatoriosPeriodos.Fields![Terminio] & ""
@@ -115,7 +115,7 @@ If Not RelatoriosPeriodos.EOF Then
         
             If Not IsNull(RelatoriosPeriodos.Fields![Inicio]) Then
                 stLinkCriteria = stLinkCriteria & IIf(stLinkCriteria <> "", " and ", "") & _
-                                "[" & RelatoriosPeriodos.Fields![Campo] & "] Between '" & _
+                                "[" & RelatoriosPeriodos.Fields![campo] & "] Between '" & _
                                 RelatoriosPeriodos.Fields![Inicio] & _
                                 "' AND '" & _
                                 RelatoriosPeriodos.Fields![Terminio] & "'"

@@ -10,94 +10,18 @@ Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
 
+
 Public strViagem As String
 Public strTarefa As String
-
-
-Private Sub cmdReagendamentoColoca_Click()
-Dim intCurrentRow As Integer
-Dim lstItens As ListBox
-
-Set lstItens = Me.lstColoca
-
-DoCmd.Hourglass True
-
-
-SysCmd acSysCmdInitMeter, "Reagendando Coloca", lstItens.ListCount - 1
-
-For intCurrentRow = 1 To lstItens.ListCount - 1
-    SysCmd acSysCmdUpdateMeter, intCurrentRow
-    DoEvents
-
-    If Not IsNull(lstItens.Column(0, intCurrentRow)) Then
-        ReagendamentoColoca lstItens.Column(0, intCurrentRow)
-    End If
-
-Next intCurrentRow
-
-SysCmd acSysCmdRemoveMeter
-
-DoCmd.Hourglass False
-
-
-lstItens.Requery
-
-End Sub
-
-Private Sub cmdReagendamentoRetira_Click()
-Dim intCurrentRow As Integer
-Dim lstItens As ListBox
-
-Set lstItens = Me.lstRetira
-
-DoCmd.Hourglass True
-
-SysCmd acSysCmdInitMeter, "Reagendando Retira", lstItens.ListCount - 1
-
-For intCurrentRow = 1 To lstItens.ListCount - 1
-    SysCmd acSysCmdUpdateMeter, intCurrentRow
-    DoEvents
-
-    If Not IsNull(lstItens.Column(0, intCurrentRow)) Then
-        ReagendamentoRetira lstItens.Column(0, intCurrentRow)
-    End If
-
-Next intCurrentRow
-
-SysCmd acSysCmdRemoveMeter
-
-DoCmd.Hourglass False
-
-lstItens.Requery
-End Sub
-
-Private Sub cmdReagendamentoTroca_Click()
-Dim intCurrentRow As Integer
-Dim lstItens As ListBox
-
-Set lstItens = Me.lstTroca
-
-DoCmd.Hourglass True
-
-
-SysCmd acSysCmdInitMeter, "Reagendando Troca", lstItens.ListCount - 1
-
-For intCurrentRow = 1 To lstItens.ListCount - 1
-    SysCmd acSysCmdUpdateMeter, intCurrentRow
-    DoEvents
-
-    If Not IsNull(lstItens.Column(0, intCurrentRow)) Then
-        ReagendamentoTroca lstItens.Column(0, intCurrentRow)
-    End If
-
-Next intCurrentRow
-
-SysCmd acSysCmdRemoveMeter
-
-DoCmd.Hourglass False
-
-lstItens.Requery
-End Sub
+'
+'Private Sub cmdNovo_Click()
+'Dim sql As String
+'
+'sql = "INSERT INTO Roteiros ( codRoteiro, DTRoteiro ) SELECT COD_ROTEIRO.strControle, Format(Now()+1,'DD/MM/YYYY') AS strDTRoteiro FROM COD_ROTEIRO"
+'
+'    DoCmd.RunSQL sql
+'
+'End Sub
 
 Private Sub cmdSalvar_Click()
 On Error GoTo Err_cmdSalvar_Click
@@ -261,12 +185,38 @@ Private Sub ctlViagens_Change()
 End Sub
 
 Private Sub Form_AfterInsert()
+'Dim strSql As String: strSql = "SELECT IIf(IsNull(Max(codRoteiro)),1,Max(codRoteiro)+1) AS strControle FROM Roteiros;"
+'Dim rstControle As DAO.Recordset
+'
+'Set rstControle = CurrentDb.OpenRecordset(strSql)
+'
+'If Me.codigo = 0 Then
+'    Me.codigo.Value = rstControle.Fields("strControle").Value
+''    DoCmd.DoMenuItem acFormBar, acRecordsMenu, acSaveRecord, , acMenuVer70
+'End If
+'
+'rstControle.Close
+'Set rstControle = Nothing
+'
+'Me.DTRoteiro = Format(Now() + 1, "DD/MM/YYYY")
 
 DoCmd.Maximize
 
 End Sub
 
 Private Sub Form_BeforeInsert(Cancel As Integer)
+'Dim strSql As String: strSql = "SELECT IIf(IsNull(Max(codRoteiro)),1,Max(codRoteiro)+1) AS strControle FROM Roteiros;"
+'Dim rstControle As DAO.Recordset
+'
+'Set rstControle = CurrentDb.OpenRecordset(strSql)
+'
+'If Me.Codigo = 0 Then
+'    Me.Codigo.value = rstControle.Fields("strControle").value
+''    DoCmd.DoMenuItem acFormBar, acRecordsMenu, acSaveRecord, , acMenuVer70
+'End If
+'
+'rstControle.Close
+'Set rstControle = Nothing
 
 Me.DTRoteiro = Format(Now() + 1, "DD/MM/YYYY")
 
@@ -475,16 +425,11 @@ Else
 
 End If
 
-    
-
     rstRoteiroViagem.Fields("Data") = strData
 
 
     rstRoteiroViagem.Update
     rstRoteiroViagem.Close
-
-    ExecutarConsulta "admAtualizarEnderecosDeViagens"
-
 
 End Function
 
@@ -521,26 +466,22 @@ Err_cmdPedidos_Click:
 
 End Sub
 Private Sub cmdCTR_Click()
-On Error GoTo Err_cmdCTR_Click
-
-    Dim stDocName As String
-
-    stDocName = "CTR"
-    DoCmd.OpenReport stDocName, acPreview, , "codRoteiro = " & Me.codRoteiro
-
-Exit_cmdCTR_Click:
-    Exit Sub
-
-Err_cmdCTR_Click:
-    MsgBox err.Description
-    Resume Exit_cmdCTR_Click
+'On Error GoTo Err_cmdCTR_Click
+'
+'    Dim stDocName As String
+'
+'    stDocName = "CTR"
+'    DoCmd.OpenReport stDocName, acPreview, , "codRoteiro = " & Me.codRoteiro
+'
+'Exit_cmdCTR_Click:
+'    Exit Sub
+'
+'Err_cmdCTR_Click:
+'    MsgBox Err.Description
+'    Resume Exit_cmdCTR_Click
 
 End Sub
 
 Private Sub Motorista_Click()
-    Me.codCadastro.value = Me.Motorista.Column(1)
+'    Me.codCadastro.Value = Me.Motorista.Column(1)
 End Sub
-
-
-
-

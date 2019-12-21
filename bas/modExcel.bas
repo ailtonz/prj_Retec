@@ -199,7 +199,7 @@ Dim aryTmp(4) As String
 End Sub
 
 Sub InsertMascara(codRelatorio, registro, coluna, Linha)
-Dim aryRegistro, sqlMascara, origem, Campo, primaria, estrangeira, expande
+Dim aryRegistro, sqlMascara, origem, campo, primaria, estrangeira, expande
     
     primaria = 0
     estrangeira = 0
@@ -210,21 +210,21 @@ Dim aryRegistro, sqlMascara, origem, Campo, primaria, estrangeira, expande
     registro = Replace(registro, "]", "")
     aryRegistro = Split(registro, "|")
     origem = aryRegistro(0)
-    Campo = aryRegistro(1)
-    Select Case (Mid(Campo, 1, 1))
+    campo = aryRegistro(1)
+    Select Case (Mid(campo, 1, 1))
         Case "!"
             primaria = 1
-            Campo = Mid(Campo, 2, Len(Campo) - 1)
+            campo = Mid(campo, 2, Len(campo) - 1)
         Case "$"
             estrangeira = 1
-            Campo = Mid(Campo, 2, Len(Campo) - 1)
+            campo = Mid(campo, 2, Len(campo) - 1)
     End Select
     
     If (UBound(aryRegistro) > 1) Then
         expande = aryRegistro(2)
     End If
     
-    sqlMascara = sqlMascara & "'" & origem & "', " & coluna & ", " & Linha & ", '" & Campo & "', " & primaria & ", " & estrangeira & ", " & expande & ")"
+    sqlMascara = sqlMascara & "'" & origem & "', " & coluna & ", " & Linha & ", '" & campo & "', " & primaria & ", " & estrangeira & ", " & expande & ")"
     ExecutarSQL (sqlMascara)
 End Sub
 

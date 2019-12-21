@@ -99,10 +99,10 @@ Public Function LocalizarBanco(Banco As String) As String
 
 End Function
 
-Public Function NovoCodigo(Tabela, Campo)
+Public Function NovoCodigo(Tabela, campo)
 Dim rstTabela As DAO.Recordset
 
-    Set rstTabela = CurrentDb.OpenRecordset("SELECT Max([" & Campo & "])+1 AS CodigoNovo FROM " & Tabela & ";")
+    Set rstTabela = CurrentDb.OpenRecordset("SELECT Max([" & campo & "])+1 AS CodigoNovo FROM " & Tabela & ";")
     If Not rstTabela.EOF Then
        NovoCodigo = rstTabela.Fields("CodigoNovo")
        If IsNull(NovoCodigo) Then
@@ -376,34 +376,4 @@ Dim x As Long
              End If
         End If
     Next obj
-End Function
-
-
-Function ExecutarConsulta(qryConsulta As String)
-Dim qdfConsulta As DAO.QueryDef
-
-Set qdfConsulta = CurrentDb.QueryDefs(qryConsulta)
-
-With qdfConsulta
-
-    .Execute
-    
-End With
-
-qdfConsulta.Close
-
-End Function
-
-
-Function GerarRoteiros(qryConsulta As String)
-Dim retorno As Variant
-
-    ExecutarConsulta qryConsulta
-
-    retorno = MsgBox("Roteiros Gerados com sucesso!", vbOKOnly + vbInformation, "Gerar Roteiros")
-    
-    If retorno = vbOK Then Pesquisar "5"
-    
-    
-    
 End Function
