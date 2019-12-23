@@ -1,0 +1,38 @@
+vw_dgv_adm_transportador
+vw_dgv_clientes
+vw_dgv_clientes_contatos
+vw_dgv_clientes_contatos_obras
+vw_dgv_clientes_historicos
+vw_dgv_clientes_obras
+vw_dgv_serv_ligacoes
+vw_dgv_serv_obras
+vw_dgv_serv_roteiros
+vw_dgv_uteis_aterros
+vw_dgv_uteis_funcionarios
+vw_dgv_uteis_usuarios
+vw_dgv_uteis_departamentos
+
+
+[ATENDIMENTO]
+OK - vw_dgv_uteis_cep
+OK - vw_dgv_uteis_links
+OK - vw_dgv_uteis_telefones
+OK - vw_dgv_status_propagandas
+OK - vw_dgv_uteis_materiais
+
+[FINANCEIRO]
+OK - vw_dgv_status_transacao
+OK - vw_dgv_status_condicoes
+OK - vw_dgv_status_clientes
+
+[GERENCIA]
+OK - vw_dgv_uteis_veiculos
+OK - vw_dgv_status_cargos
+OK - vw_dgv_status_ligacoes
+OK - vw_dgv_status_precificacao
+
+[SISTEMA]
+OK - vw_dgv_status_servicos
+OK - vw_dgv_status_tipo
+
+

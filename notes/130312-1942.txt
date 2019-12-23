@@ -1,0 +1,36 @@
+viado
+
+
+como faço para passar todo a DataTable para o banco assim que terminar as operaçõe?
+
+procura por 
+
+
+oi???
+
+perai, deixa eu procurar
+
+procura por AcceptChanges()
+
+artigos com AcceptChanges
+
+toda alteracao feita no datatable ele vai e salva no banco
+
+
+ok
+
+tem alguma func que checar a connecção do banco e caso ñ tenha espera voutar sem derrubar a aplicação???
+
+nao sei, tem q procurar nunca usei
+tenho q ir manu
+
+ok 
+
+muito obrigado
+
+abrs. bjs
+
+vnaio aedsquoece AcceptChanges
+
+
+viado!

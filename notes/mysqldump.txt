@@ -1,0 +1,1 @@
+mysqldump -u root -p dbretec > "C:\Users\user\Desktop\@WORK\__RETEC\db.sql"
