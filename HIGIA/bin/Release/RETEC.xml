@@ -1,0 +1,184 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+RETEC
+</name>
+</assembly>
+<members>
+<member name="P:RETEC.My.Resources.Resources.ResourceManager">
+	<summary>
+  Retorna a instância de ResourceManager armazenada em cache usada por essa classe.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.Culture">
+	<summary>
+  Substitui a propriedade CurrentUICulture do thread atual para todas as
+  pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources._date">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.add_file">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.add_link">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.address_book">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.administrator">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.advertising_32">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.assistant">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.available_updates">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.barcode">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.billing">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.business_contact">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.calendar">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.cave">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.check_book">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.collaborator">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.combo">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.compass">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.copy">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.Data_Grid_26x26">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.delete">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.delivery">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.edit">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.FundoBarra">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.group">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.group1">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.home">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.link">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.manager">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.map_marker">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.money_bag">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.paper_plane">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.print">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.printer">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.save">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.search">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.sell">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.signpost">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.tear_off_calendar">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.tree_structure">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:RETEC.My.Resources.Resources.truck">
+	<summary>
+  Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="T:RETEC.My.Resources.Resources">
+	<summary>
+  Uma classe de recurso de tipo de alta segurança, para pesquisar cadeias de caracteres localizadas etc.
+</summary>
+</member>
+</members>
+</doc>
