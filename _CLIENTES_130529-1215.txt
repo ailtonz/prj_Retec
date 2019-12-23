@@ -1,0 +1,256 @@
+    Private Sub CLIENTE_NOVO()
+
+        Dim strCNPJ_CPF As String = ""
+        Dim strIE_RG As String = ""
+        Dim strCADASTRO_TIPO As String = ""
+
+        Dim myConnection As New MySqlConnection(GetConnectionStringByName("servidor"))
+        Dim myCommand As New MySqlCommand()
+
+        Try
+            myConnection.Open()
+        Catch erro As MySqlException
+            MessageBox.Show("erro ao tentar ler banco de dados: " & erro.Message)
+        End Try
+
+        myCommand.Connection = myConnection
+        myCommand.CommandText = "sp_CAD_CLIENTE_INSERT"
+        myCommand.CommandType = CommandType.StoredProcedure
+
+        With myCommand.Parameters
+
+            '' TIPO DE CADASTRO
+            If Me.cboCADASTRO_TIPO.Text = "FISICO" Then
+                strCNPJ_CPF = Trim(Replace(Replace(Me.mskCNPJ_CPF.Text, ",", ""), "-", ""))
+                strCADASTRO_TIPO = "PF"
+                .AddWithValue("p_CADASTRO_TIPO", strCADASTRO_TIPO)
+            ElseIf Me.cboCADASTRO_TIPO.Text = "JURIDICO" Then
+                strCNPJ_CPF = Trim(Replace(Replace(Replace(Me.mskCNPJ_CPF.Text, ",", ""), "-", ""), "/", ""))
+                strCADASTRO_TIPO = "PJ"
+                .AddWithValue("p_CADASTRO_TIPO", strCADASTRO_TIPO)
+            End If
+
+            '' CNPJ_CPF
+            .AddWithValue("p_CNPJ_CPF", strCNPJ_CPF)
+
+            '' IE_RG
+            strIE_RG = Me.mskIE_RG.Text
+            .AddWithValue("p_IE_RG", strIE_RG)
+
+            '' NOME E APELIDO
+            .AddWithValue("p_NOME", Me.txtPRINCIPAL_NOME.Text)
+            .AddWithValue("p_NOME_FANTASIA", Me.txtPRINCIPAL_NOME_FANTASIA.Text)
+
+            '' OBSERVAÇÃO
+            .AddWithValue("p_CADASTRO_OBSERVACAO", Me.cboCADASTRO_OBSERVACAO.Text)
+
+            ''STATUS
+            If Me.cboCADASTRO_STATUS.Text = "LIBERADO" Then
+                .AddWithValue("p_CADASTRO_STATUS", True)
+            ElseIf Me.cboCADASTRO_STATUS.Text = "BLOQUEADO" Then
+                .AddWithValue("p_CADASTRO_STATUS", False)
+            End If
+
+            '' ENDEREÇO PRINCIPAL
+            .AddWithValue("p_CEP", Replace(Me.mskPRINCIPAL_CEP.Text, "-", ""))
+            .AddWithValue("p_ENDERECO", Me.txtPRINCIPAL_ENDERECO.Text)
+            .AddWithValue("p_NUMERO", Me.txtPRINCIPAL_NUMERO.Text)
+            .AddWithValue("p_COMPLEMENTO", Me.txtPRINCIPAL_COMPLEMENTO.Text)
+            .AddWithValue("p_BAIRRO", Me.txtPRINCIPAL_BAIRRO.Text)
+            .AddWithValue("p_CIDADE", Me.txtPRINCIPAL_CIDADE.Text)
+            .AddWithValue("p_ESTADO", Me.txtPRINCIPAL_ESTADO.Text)
+
+            '' CONTATO
+            .AddWithValue("p_CONTATO", Me.txtPRINCIPAL_CONTATO.Text)
+            .AddWithValue("p_TELEFONE", Me.txtPRINCIPAL_TELEFONE.Text)
+            .AddWithValue("p_EMAIL", Me.txtPRINCIPAL_EMAIL.Text)
+
+            '' PROPAGANDA 
+            .AddWithValue("p_CADASTRO_PROPAGANDA", Me.cboCADASTRO_PROPAGANDA.Text)
+
+            '' USUÁRIO RESPONSÁVEL PELO CADASTRO
+            .AddWithValue("p_USUARIO", "ADM")
+
+            Try
+                myCommand.ExecuteNonQuery()
+            Catch erro As MySqlException
+                MessageBox.Show("erro ao executar comando: " & erro.Message)
+
+            End Try
+
+        End With
+
+        myConnection.Close()
+
+    End Sub
+
+    Private Sub CLIENTE_ALTERAR()
+
+        Dim strCNPJ_CPF As String = ""
+        Dim strIE_RG As String = ""
+        Dim strCADASTRO_TIPO As String = ""
+
+        Dim myConnection As New MySqlConnection(GetConnectionStringByName("servidor"))
+        Dim myCommand As New MySqlCommand()
+
+        Try
+            myConnection.Open()
+        Catch erro As MySqlException
+            MessageBox.Show("erro ao tentar ler banco de dados: " & erro.Message)
+        End Try
+
+        myCommand.Connection = myConnection
+        myCommand.CommandText = "sp_CAD_CLIENTE_UPDATE"
+        myCommand.CommandType = CommandType.StoredProcedure
+
+        With myCommand.Parameters
+
+            '' ID DO CLIENTE
+            .AddWithValue("p_ID_CLIENTE", strCodigoCliente)
+
+            '' TIPO DE CADASTRO
+            If Me.cboCADASTRO_TIPO.Text = "FISICO" Then
+                strCNPJ_CPF = Trim(Replace(Replace(Me.mskCNPJ_CPF.Text, ",", ""), "-", ""))
+                strCADASTRO_TIPO = "PF"
+                .AddWithValue("p_CADASTRO_TIPO", strCADASTRO_TIPO)
+            ElseIf Me.cboCADASTRO_TIPO.Text = "JURIDICO" Then
+                strCNPJ_CPF = Trim(Replace(Replace(Replace(Me.mskCNPJ_CPF.Text, ",", ""), "-", ""), "/", ""))
+                strCADASTRO_TIPO = "PJ"
+                .AddWithValue("p_CADASTRO_TIPO", strCADASTRO_TIPO)
+            End If
+
+            '' CNPJ_CPF
+            .AddWithValue("p_CNPJ_CPF", strCNPJ_CPF)
+
+            '' IE_RG
+            strIE_RG = Me.mskIE_RG.Text
+            .AddWithValue("p_IE_RG", strIE_RG)
+
+            '' NOME E APELIDO
+            .AddWithValue("p_NOME", Me.txtPRINCIPAL_NOME.Text)
+            .AddWithValue("p_NOME_FANTASIA", Me.txtPRINCIPAL_NOME_FANTASIA.Text)
+
+            '' OBSERVAÇÃO
+            .AddWithValue("p_CADASTRO_OBSERVACAO", Me.cboCADASTRO_OBSERVACAO.Text)
+
+            ''STATUS
+            If Me.cboCADASTRO_STATUS.Text = "LIBERADO" Then
+                .AddWithValue("p_CADASTRO_STATUS", True)
+            ElseIf Me.cboCADASTRO_STATUS.Text = "BLOQUEADO" Then
+                .AddWithValue("p_CADASTRO_STATUS", False)
+            End If
+
+            '' ENDEREÇO PRINCIPAL
+            .AddWithValue("p_CEP", Replace(Me.mskPRINCIPAL_CEP.Text, "-", ""))
+            .AddWithValue("p_ENDERECO", Me.txtPRINCIPAL_ENDERECO.Text)
+            .AddWithValue("p_NUMERO", Me.txtPRINCIPAL_NUMERO.Text)
+            .AddWithValue("p_COMPLEMENTO", Me.txtPRINCIPAL_COMPLEMENTO.Text)
+            .AddWithValue("p_BAIRRO", Me.txtPRINCIPAL_BAIRRO.Text)
+            .AddWithValue("p_CIDADE", Me.txtPRINCIPAL_CIDADE.Text)
+            .AddWithValue("p_ESTADO", Me.txtPRINCIPAL_ESTADO.Text)
+
+            '' CONTATO
+            .AddWithValue("p_CONTATO", Me.txtPRINCIPAL_CONTATO.Text)
+            .AddWithValue("p_TELEFONE", Me.txtPRINCIPAL_TELEFONE.Text)
+            .AddWithValue("p_EMAIL", Me.txtPRINCIPAL_EMAIL.Text)
+
+            '' PROPAGANDA 
+            .AddWithValue("p_CADASTRO_PROPAGANDA", Me.cboCADASTRO_PROPAGANDA.Text)
+
+            '' USUÁRIO RESPONSÁVEL PELO CADASTRO
+            .AddWithValue("p_USUARIO", "ADM")
+
+            Try
+                myCommand.ExecuteNonQuery()
+            Catch erro As MySqlException
+                MessageBox.Show("erro ao executar comando: " & erro.Message)
+
+            End Try
+
+
+
+        End With
+
+        myConnection.Close()
+
+    End Sub
+
+    Private Sub CLIENTE_CARREGAR(ByVal ID_CLIENTE As String)
+
+        Dim mySelectQuery As String = "Select * from vw_cad_clientes where ID_CLIENTE = " + strCodigoCliente
+
+        Dim myConnection As New MySqlConnection(GetConnectionStringByName("servidor"))
+        Dim myCommand As New MySqlCommand(mySelectQuery, myConnection)
+
+        myConnection.Open()
+        Dim myReader As MySqlDataReader = myCommand.ExecuteReader()
+
+
+        Try
+            myReader.Read()
+
+            With Me
+
+                If (myReader("CADASTRO_TIPO").ToString = "PJ") Then
+                    .cboCADASTRO_TIPO.SelectedIndex = CInt(cboCADASTRO_TIPO.FindString("JURIDICO"))
+                    .mskCNPJ_CPF.UseSystemPasswordChar = False
+                    .mskCNPJ_CPF.Mask = "00.000.000/0000-00"
+                    .mskIE_RG.Mask = "999.999.999.999"
+
+                ElseIf (myReader("CADASTRO_TIPO").ToString = "PF") Then
+                    .cboCADASTRO_TIPO.SelectedIndex = CInt(cboCADASTRO_TIPO.FindString("FISICO"))
+                    .mskCNPJ_CPF.UseSystemPasswordChar = False
+                    .mskCNPJ_CPF.Mask = "000.000.000-00"
+                    .mskIE_RG.Mask = "99.999.999-9"
+
+                End If
+
+                .txtPRINCIPAL_NOME_FANTASIA.Text = myReader("NOME_FANTASIA").ToString
+                .txtPRINCIPAL_NOME.Text = myReader("NOME").ToString
+
+                '' ENDERECO - PRINCIPAL
+                .txtPRINCIPAL_ENDERECO.Text = myReader("ENDERECO").ToString
+                .txtPRINCIPAL_NUMERO.Text = myReader("NUMERO").ToString
+                .txtPRINCIPAL_COMPLEMENTO.Text = myReader("COMPLEMENTO").ToString
+                .txtPRINCIPAL_BAIRRO.Text = myReader("BAIRRO").ToString
+                .mskPRINCIPAL_CEP.Text = myReader("CEP").ToString
+                .txtPRINCIPAL_CIDADE.Text = myReader("CIDADE").ToString
+                .txtPRINCIPAL_ESTADO.Text = myReader("ESTADO").ToString
+
+                '' CONTATO
+                .txtPRINCIPAL_CONTATO.Text = myReader("CONTATO").ToString
+                .txtPRINCIPAL_TELEFONE.Text = myReader("TELEFONE").ToString
+                .txtPRINCIPAL_EMAIL.Text = myReader("EMAIL").ToString
+
+                '' DOCUMENTOS
+                .mskCNPJ_CPF.Text = myReader("CNPJ_CPF").ToString
+                .mskIE_RG.Text = myReader("IE_RG").ToString
+
+                '' SOBRE
+                .cboCADASTRO_STATUS.SelectedIndex = CInt(cboCADASTRO_STATUS.FindString(myReader("CADASTRO_STATUS").ToString))
+                .cboCADASTRO_OBSERVACAO.SelectedIndex = CInt(cboCADASTRO_OBSERVACAO.FindString(myReader("CADASTRO_OBSERVACAO").ToString))
+
+                If myReader("CADASTRO_PROPAGANDA").ToString <> "" Then
+                    .cboCADASTRO_PROPAGANDA.SelectedIndex = CInt(cboCADASTRO_PROPAGANDA.FindString(myReader("CADASTRO_PROPAGANDA").ToString))
+                End If
+
+                '' ADMINISTRAÇÃO DO REGISTRO
+                .txtCAD_EMISSAO.Text = myReader("CAD_EMISSAO").ToString
+                .txtCAD_USUARIO.Text = myReader("CAD_USUARIO").ToString
+
+                .txtALT_EMISSAO.Text = myReader("ALT_EMISSAO").ToString
+                .txtALT_USUARIO.Text = myReader("ALT_USUARIO").ToString
+
+            End With
+
+            CARREGAR_DADOS_CLIENTE(strCodigoCliente)
+
+            DESBLOQUEIO_CLIENTE()
+
+        Finally
+            ' always call Close when done reading.
+            myReader.Close()
+            ' always call Close when done with connection.
+            myConnection.Close()
+        End Try
+    End Sub

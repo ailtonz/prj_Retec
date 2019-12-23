@@ -1,0 +1,5 @@
+http://www.vbmania.com.br/pages/index.php?varModulo=Forum&varMethod=Abrir&varID=323553
+
+http://dev.mysql.com/tech-resources/articles/ebonat-datagridview-vb-net.html
+
+http://www.youtube.com/watch?v=b3Q7UjK5_t0

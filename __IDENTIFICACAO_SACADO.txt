@@ -1,0 +1,1 @@
+CONCAT(LEFT(REPEAT(0,14),(14 - LENGTH(`cadastros`.`CNPJ_CPF`))),`cadastros`.`CNPJ_CPF`) AS `IDENTIFICACAO_SACADO`,
