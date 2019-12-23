@@ -1,0 +1,16 @@
+SELECT
+
+	vw_dgv_clientes.ID AS ID_CLIENTE,
+	vw_dgv_clientes_obras.ID AS ID_OBRA,
+	vw_dgv_cad_materiais.ID AS ID_MATERIAL,
+	vw_dgv_cad_materiais.MATERIAL
+	
+FROM
+	vw_dgv_clientes_obras, vw_dgv_clientes, vw_dgv_cad_materiais
+	
+WHERE
+	vw_dgv_clientes.ID = vw_dgv_clientes_obras.ID_CLIENTE
+	AND
+	vw_dgv_clientes_obras.ID ='1707629'
+	AND
+	vw_dgv_cad_materiais.ID = '1709261';
