@@ -1,0 +1,4 @@
+CALL `sp_UTEIS_PROPAGANDA`('insert', '0', 'CAÇAMBA NA RUA', 'adm');
+CALL `sp_UTEIS_PROPAGANDA`('insert', '0', 'GOOGLE', 'adm');
+CALL `sp_UTEIS_PROPAGANDA`('insert', '0', 'INDICAÇÃO', 'adm');
+CALL `sp_UTEIS_PROPAGANDA`('insert', '0', 'LISTA TELEFÔNICAÇÃO', 'adm');

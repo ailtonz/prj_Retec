@@ -1,0 +1,4 @@
+CALL `sp_UTEIS_LINK`('INSERT', '0', 'PESQUISA GRATUITA DE PROTESTO', 'http://www.ieptb.com.br/', 'adm');
+CALL `sp_UTEIS_LINK`('INSERT', '0', 'SITUAÇÃO CADASTRAL DO CPF', 'http://www.receita.fazenda.gov.br/Aplicacoes/ATCTA/cpf/ConsultaPublica.asp', 'adm');
+CALL `sp_UTEIS_LINK`('INSERT', '0', 'SITUAÇÃO CADASTRAL DO CNPJ', 'http://www.receita.fazenda.gov.br/PessoaJuridica/CNPJ/cnpjreva/Cnpjreva_Solicitacao.asp', 'adm');
+CALL `sp_UTEIS_LINK`('INSERT', '0', 'GOOGLE MAPS', 'https://maps.google.com/', 'adm');

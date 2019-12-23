@@ -1,0 +1,1 @@
+SELECT ALL nome, cadastro_categoria, bairro, LENGTH(bairro) as qtd_bairro FROM cadastros order by qtd_bairro desc;
