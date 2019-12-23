@@ -1,0 +1,16 @@
+DELIMITER //
+
+CREATE VIEW vw_movimentos_pcontas AS
+
+SELECT 
+	id,
+	GRUPO,
+	CONTA
+FROM
+	movimentos 
+WHERE
+	REGISTRO_CATEGORIA = "PCONTA"
+ORDER BY
+	GRUPO,CONTA  //
+
+DELIMITER ;

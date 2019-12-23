@@ -1,0 +1,14 @@
+DELIMITER //
+
+CREATE VIEW vw_propagandas AS
+
+SELECT 
+	cadastros.ID AS ID,
+	cadastros.CADASTRO_PROPAGANDA AS PROPAGANDA
+
+FROM 
+	cadastros 
+WHERE 
+(cadastros.REGISTRO_CATEGORIA = _utf8'UTEIS_PROPAGANDA') ORDER BY cadastros.CADASTRO_PROPAGANDA asc //
+
+DELIMITER ;
