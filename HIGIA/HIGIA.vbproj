@@ -1,0 +1,593 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2F6C6755-5DD1-4E23-92D8-BBDFFD40836B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>RETEC.My.MyApplication</StartupObject>
+    <RootNamespace>RETEC</RootNamespace>
+    <AssemblyName>RETEC</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>RETEC.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>RETEC.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="cadastroTransportador.Designer.vb">
+      <DependentUpon>cadastroTransportador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastroTransportador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClasseBancoDados.vb" />
+    <Compile Include="ClasseRotinasDiversas.vb" />
+    <Compile Include="cadastroPropaganda.Designer.vb">
+      <DependentUpon>cadastroPropaganda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastroPropaganda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisarFuncionario.Designer.vb">
+      <DependentUpon>pesquisarFuncionario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisarFuncionario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisarTransportador.Designer.vb">
+      <DependentUpon>pesquisarTransportador.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisarTransportador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisarAterro.Designer.vb">
+      <DependentUpon>pesquisarAterro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisarAterro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisarMateriais.Designer.vb">
+      <DependentUpon>pesquisarMateriais.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisarMateriais.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisarCep.Designer.vb">
+      <DependentUpon>pesquisarCep.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisarCep.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisarLinks.Designer.vb">
+      <DependentUpon>pesquisarLinks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisarLinks.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisarTelefones.Designer.vb">
+      <DependentUpon>pesquisarTelefones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisarTelefones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisarVeiculos.Designer.vb">
+      <DependentUpon>pesquisarVeiculos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisarVeiculos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisarTipoCadastros.Designer.vb">
+      <DependentUpon>pesquisarTipoCadastros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisarTipoCadastros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisarTransacao.Designer.vb">
+      <DependentUpon>pesquisarTransacao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisarTransacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisarStatusServicos.Designer.vb">
+      <DependentUpon>pesquisarStatusServicos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisarStatusServicos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisarPropagandas.Designer.vb">
+      <DependentUpon>pesquisarPropagandas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisarPropagandas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisarStatusPrecificacao.Designer.vb">
+      <DependentUpon>pesquisarStatusPrecificacao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisarStatusPrecificacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisarStatusLigacoes.Designer.vb">
+      <DependentUpon>pesquisarStatusLigacoes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisarStatusLigacoes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisarCondicoes.Designer.vb">
+      <DependentUpon>pesquisarCondicoes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisarCondicoes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisarObservacao.Designer.vb">
+      <DependentUpon>pesquisarObservacao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisarObservacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisarCargos.Designer.vb">
+      <DependentUpon>pesquisarCargos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisarCargos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisar.Designer.vb">
+      <DependentUpon>pesquisar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastroObra.Designer.vb">
+      <DependentUpon>cadastroObra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastroObra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisaClientes.Designer.vb">
+      <DependentUpon>pesquisaClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisaClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pesquisaAgenda.Designer.vb">
+      <DependentUpon>pesquisaAgenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pesquisaAgenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastro.Designer.vb">
+      <DependentUpon>cadastro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FPrincipal.Designer.vb">
+      <DependentUpon>FPrincipal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastroCliente.Designer.vb">
+      <DependentUpon>cadastroCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastroCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastroLigacao.Designer.vb">
+      <DependentUpon>cadastroLigacao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastroLigacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportarDados.Designer.vb">
+      <DependentUpon>ImportarDados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImportarDados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="movimentoReceita.Designer.vb">
+      <DependentUpon>movimentoReceita.vb</DependentUpon>
+    </Compile>
+    <Compile Include="movimentoReceita.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="movimentoDespesa.Designer.vb">
+      <DependentUpon>movimentoDespesa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="movimentoDespesa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastroRoteiros.Designer.vb">
+      <DependentUpon>cadastroRoteiros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastroRoteiros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Principal.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="cadastroTransportador.resx">
+      <DependentUpon>cadastroTransportador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastroPropaganda.resx">
+      <DependentUpon>cadastroPropaganda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisarFuncionario.resx">
+      <DependentUpon>pesquisarFuncionario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisarTransportador.resx">
+      <DependentUpon>pesquisarTransportador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisarAterro.resx">
+      <DependentUpon>pesquisarAterro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisarMateriais.resx">
+      <DependentUpon>pesquisarMateriais.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisarCep.resx">
+      <DependentUpon>pesquisarCep.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisarLinks.resx">
+      <DependentUpon>pesquisarLinks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisarTelefones.resx">
+      <DependentUpon>pesquisarTelefones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisarVeiculos.resx">
+      <DependentUpon>pesquisarVeiculos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisarTipoCadastros.resx">
+      <DependentUpon>pesquisarTipoCadastros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisarTransacao.resx">
+      <DependentUpon>pesquisarTransacao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisarStatusServicos.resx">
+      <DependentUpon>pesquisarStatusServicos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisarPropagandas.resx">
+      <DependentUpon>pesquisarPropagandas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisarStatusPrecificacao.resx">
+      <DependentUpon>pesquisarStatusPrecificacao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisarStatusLigacoes.resx">
+      <DependentUpon>pesquisarStatusLigacoes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisarCondicoes.resx">
+      <DependentUpon>pesquisarCondicoes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisarObservacao.resx">
+      <DependentUpon>pesquisarObservacao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisarCargos.resx">
+      <DependentUpon>pesquisarCargos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisar.resx">
+      <DependentUpon>pesquisar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastroObra.resx">
+      <DependentUpon>cadastroObra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisaClientes.resx">
+      <DependentUpon>pesquisaClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pesquisaAgenda.resx">
+      <DependentUpon>pesquisaAgenda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastro.resx">
+      <DependentUpon>cadastro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FPrincipal.resx">
+      <DependentUpon>FPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastroCliente.resx">
+      <DependentUpon>cadastroCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastroLigacao.resx">
+      <DependentUpon>cadastroLigacao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportarDados.resx">
+      <DependentUpon>ImportarDados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="movimentoDespesa.resx">
+      <DependentUpon>movimentoDespesa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="movimentoReceita.resx">
+      <DependentUpon>movimentoReceita.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastroRoteiros.resx">
+      <DependentUpon>cadastroRoteiros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CrystalReport1.mht" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\assistant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delivery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data_Grid_26x26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tear_off_calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_bag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paper_plane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check_book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\combo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business_contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administrator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tree_structure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FundoBarra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map_marker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\collaborator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\signpost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\billing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address_book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\available_updates.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HigiaENT\HigiaENT.vbproj">
+      <Project>{A4DFAAAB-636A-40C5-B325-2FDA5472A5B5}</Project>
+      <Name>HigiaENT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HigiaNEG\HigiaNEG.vbproj">
+      <Project>{B0B71001-7354-4C0E-8997-103DF770EB13}</Project>
+      <Name>HigiaNEG</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icons\PixeloPhilia-32PX-Icon-Set-by-omercetin\PNG\date.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\advertising-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mental_status-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck-36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck-24.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
